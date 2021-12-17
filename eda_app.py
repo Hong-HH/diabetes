@@ -25,11 +25,15 @@ def run_eda_app() :
     st.text('각 컬럼별 히스토그램 확인')
 
     ## 이거 워닝 뜬다.
+    # 참고자료
+    # https://towardsdatascience.com/data-visualization-using-streamlit-151f4c85c79a
     # loc로도 된대 
     #fig1 = plt.figure()
+    st.set_option('deprecation.showPyplotGlobalUse', False)
     df.hist(figsize=(10,8))
     plt.show()
     st.pyplot()
+    st.set_option('deprecation.showPyplotGlobalUse', True )
 
     # 빈의 갯수를 조절하는 슬라이더
     bins = st.slider('bin의 갯수 조절', min_value=10, max_value=50)
